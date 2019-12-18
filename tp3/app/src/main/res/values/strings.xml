@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">tp3</string>
+    <string name="email_adress">Email Adress</string>
+    <string name="telephone">Telephone</string>
+    <string name="save_and_continue">Save And Continue</string>
+    <string name="contact">Contact</string>
+    <string name="pseudo">Pseudo</string>
+    <string name="age">Age</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="bac">Bac</string>
+    <string name="python">Python</string>
+    <string name="java">Java</string>
+    <string name="master">Master</string>
+    <string name="phd">PhD</string>
+    <string name="high_school">High School</string>
+    <string name="last_diploma_obtained">Last diploma obtained</string>
+    <string name="programming_languages">Programming Languages</string>
+    <string name="html_css">HTML/CSS</string>
+    <string name="profile">Profile</string>
+    <string name="android">Android</string>
+    <string name="javascript">JavaScript</string>
+    <string name="php">Php</string>
+    <string name="validate">VALIDATE</string>
+    <string name="tell_us_more_about_you">Tell us more about you</string>
+    <string name="recieve_newsletter">Recieve Newsletter</string>
+</resources>
