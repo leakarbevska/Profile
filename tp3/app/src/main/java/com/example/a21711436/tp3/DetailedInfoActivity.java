@@ -27,17 +27,18 @@ public class DetailedInfoActivity extends Activity {
 
         check_htmlCss = (CheckBox) findViewById(R.id.check_htmlcss);
         check_android = (CheckBox) findViewById(R.id.check_android);
-        check_php  = (CheckBox) findViewById(R.id.check_php);
-        check_java = (CheckBox) findViewById(R.id.check_java);
+        check_php     = (CheckBox) findViewById(R.id.check_php);
+        check_java    = (CheckBox) findViewById(R.id.check_java);
         check_javascript = (CheckBox) findViewById(R.id.check_javascript);
-        check_python = (CheckBox) findViewById(R.id.check_python);
+        check_python  = (CheckBox) findViewById(R.id.check_python);
 
-        radio_bac = (RadioButton) findViewById(R.id.radio_bac);
+        radio_bac    = (RadioButton) findViewById(R.id.radio_bac);
         radio_highSchool = (RadioButton) findViewById(R.id.radio_highSchool);
         radio_master = (RadioButton) findViewById(R.id.radio_Master);
-        radio_phd = (RadioButton) findViewById(R.id.radio_phd);
+        radio_phd    = (RadioButton) findViewById(R.id.radio_phd);
 
         switch_newsletter = (Switch)findViewById(R.id.switch_newsletter);
+        text_moreInfo     = (EditText)findViewById(R.id.text_moreInfo);
 
         Intent intent = this.getIntent();
         Bundle bundle = intent.getExtras();
@@ -48,6 +49,8 @@ public class DetailedInfoActivity extends Activity {
 
         text_profileInfo = (TextView) findViewById(R.id.text_summary);
         text_profileInfo.setText("Profile of "+name+" -"+age+" years");
+
+        //fillInfoIfExist();
     }
 
     public void validate(View v){
@@ -56,6 +59,7 @@ public class DetailedInfoActivity extends Activity {
         startActivity(intent);
     }
 
+    /*---------------------------------- UTILS --------------------------------*/
     public String getCheckedProgrammingLanguages(){
         String result = "";
 
@@ -68,7 +72,7 @@ public class DetailedInfoActivity extends Activity {
         }if(check_java.isChecked()){
             result += check_java.getText().toString()+" ";
         }if(check_javascript.isChecked()){
-            result += " "+check_javascript.getText().toString()+" ";
+            result += check_javascript.getText().toString()+" ";
         }if(check_python.isChecked()){
             result += check_python.getText().toString();
         }
@@ -98,5 +102,15 @@ public class DetailedInfoActivity extends Activity {
             }
         }
         return result;
+    }
+
+
+    public void fillInfoIfExist(){
+        Intent intent = this.getIntent();
+        Bundle bundle = intent.getExtras();
+        Profile profile = bundle.getParcelable("profile");
+        if(profile != null){
+            this.text_moreInfo.setText(profile.getMoreInfo());
+        }
     }
 }

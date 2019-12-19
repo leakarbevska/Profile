@@ -6,26 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".DetailedInfoActivity">
 
-    <EditText
-        android:id="@+id/text_moreInfo"
-        android:layout_width="249dp"
-        android:layout_height="88dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/text_tellUsMore"
-        app:layout_constraintTop_toBottomOf="@+id/text_tellUsMore"
-        android:autofillHints="" />
-
     <Switch
         android:id="@+id/switch_newsletter"
         android:layout_width="267dp"
         android:layout_height="36dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="@string/recieve_newsletter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintHorizontal_bias="0.406"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/check_php" />
 
@@ -99,25 +89,23 @@
         android:id="@+id/check_android"
         android:layout_width="113dp"
         android:layout_height="33dp"
-        android:layout_marginEnd="84dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/android"
+        app:layout_constraintBottom_toBottomOf="@+id/check_php"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.011"
+        app:layout_constraintStart_toEndOf="@+id/check_php"
         app:layout_constraintTop_toBottomOf="@+id/check_java" />
 
     <CheckBox
         android:id="@+id/check_php"
         android:layout_width="113dp"
         android:layout_height="33dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="60dp"
         android:text="@string/php"
-        app:layout_constraintBottom_toBottomOf="@+id/check_android"
-        app:layout_constraintEnd_toStartOf="@+id/check_android"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/check_javascript"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/check_javascript" />
 
     <TextView
         android:id="@+id/text_lastDiplomaObtained"
@@ -136,17 +124,22 @@
 
 
 
+
+
+
+
     ]]>
 
     <Button
         android:id="@+id/button_validate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="24dp"
         android:onClick="validate"
         android:text="@string/validate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent" />
 
     <RadioGroup
@@ -191,11 +184,22 @@
             android:text="@string/phd" />
     </RadioGroup>
 
+    <EditText
+        android:id="@+id/text_moreInfo"
+        android:layout_width="298dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toStartOf="@+id/text_tellUsMore"
+        app:layout_constraintTop_toBottomOf="@+id/text_tellUsMore" />
+
     <TextView
         android:id="@+id/text_tellUsMore"
         android:layout_width="wrap_content"
         android:layout_height="18dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="28dp"
         android:text="@string/tell_us_more_about_you"
         app:layout_constraintStart_toStartOf="@+id/text_programmingLanguages"
         app:layout_constraintTop_toBottomOf="@+id/switch_newsletter" />

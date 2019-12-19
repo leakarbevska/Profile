@@ -38,6 +38,10 @@ public class InitialInfoActivity extends AppCompatActivity {
     }
 
     /*---------------------------------- UTILS -------------------------------*/
+    public void checkProfileAlreadySubmit(){
+
+    }
+
     public boolean checkValid(){
         String error = getError();
         if(TextUtils.isEmpty(error)){
@@ -57,15 +61,15 @@ public class InitialInfoActivity extends AppCompatActivity {
             try{
                 int num = Integer.parseInt(text_age.getText().toString());
                 if( num > 120){
-                    error += "Age cannot be bigger than 120!";
+                    error += "Age cannot be bigger than 120! ";
                 }
             }catch (NumberFormatException e) {
-                error += "Age should be an integer!";
+                error += "Age should be an integer! ";
             }
         }if(TextUtils.isEmpty(text_pseudo.getText().toString())){
-            error += "Pseudo cannot be empty!";
+            error += "Pseudo cannot be empty! ";
         }if(TextUtils.isEmpty(text_email.getText().toString())){
-            error += "Email cannot be empty!";
+            error += "Email cannot be empty! ";
         }if(TextUtils.isEmpty(text_phone.getText().toString())){
             error += "Phone cannot be empty!";
         }
