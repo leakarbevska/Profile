@@ -6,7 +6,8 @@ import android.os.Parcelable;
 public class Profile implements Parcelable {
 
     private String pseudo, email, phone, age, lastDiploma, moreInfo, programmingLanguages;
-    private boolean htmlCss, android, php, java, javascript, python, receiveNewsletter;
+    private boolean receiveNewsletter;
+    //private boolean htmlCss, android, php, java, javascript, python;
 
     public Profile(String pseudo, String age, String email, String phone, String lastDiploma, String moreInfo, String programmingLanguages, Boolean receiveNewsletter){
         this.pseudo = pseudo;
@@ -26,13 +27,14 @@ public class Profile implements Parcelable {
         age    = in.readString();
         lastDiploma = in.readString();
         moreInfo = in.readString();
-        htmlCss  = in.readByte() != 0;
+        programmingLanguages = in.readString();
+        receiveNewsletter = in.readByte() != 0;
+        /*htmlCss  = in.readByte() != 0;
         android  = in.readByte() != 0;
         php  = in.readByte() != 0;
         java = in.readByte() != 0;
         javascript = in.readByte() != 0;
-        python = in.readByte() != 0;
-        receiveNewsletter = in.readByte() != 0;
+        python = in.readByte() != 0;*/
     }
 
     public String getPseudo() {
@@ -75,13 +77,14 @@ public class Profile implements Parcelable {
         dest.writeString(age);
         dest.writeString(lastDiploma);
         dest.writeString(moreInfo);
-        dest.writeByte((byte) (htmlCss ? 1 : 0));
+        dest.writeString(programmingLanguages);
+        dest.writeByte((byte) (receiveNewsletter ? 1 : 0));
+        /*dest.writeByte((byte) (htmlCss ? 1 : 0));
         dest.writeByte((byte) (android ? 1 : 0));
         dest.writeByte((byte) (php ? 1 : 0));
         dest.writeByte((byte) (java ? 1 : 0));
         dest.writeByte((byte) (javascript ? 1 : 0));
-        dest.writeByte((byte) (python ? 1 : 0));
-        dest.writeByte((byte) (receiveNewsletter ? 1 : 0));
+        dest.writeByte((byte) (python ? 1 : 0));*/
     }
 
     @Override

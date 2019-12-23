@@ -23,8 +23,8 @@ public class DisplayInfoActivity extends AppCompatActivity {
         text_summary = (TextView) findViewById(R.id.text_summary);
         text_summary.setText("Pseudo: "+profile.getPseudo()
                             +"\nAge: "+profile.getAge()
-                            +"\nContact: "+profile.getPhone()
-                            +"\nEmail: "+profile.getEmail()
+ //                           +"\nContact: "+profile.getPhone()
+//                            +"\nEmail: "+profile.getEmail()
                             +"\nEducation degree: "+profile.getLastDiploma()
                             +"\nKnowledge of the programming languages: "+profile.getProgrammingLanguages()
                             +"\n"+makeNewsletterString()
@@ -45,9 +45,9 @@ public class DisplayInfoActivity extends AppCompatActivity {
     public String makeNewsletterString(){
         String newsletter = " ";
         if(profile.isReceiveNewsletter()){
-            newsletter = " Agrees to recieve newsletter";
+            newsletter = "Agrees to receive newsletter";
         }else{
-            newsletter = " Does not agree to recieve newsletter";
+            newsletter = "Does not agree to receive newsletter";
         }
         return newsletter;
     }
