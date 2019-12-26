@@ -1,2 +1,2 @@
 # Profile
-Profile information insertion (AndroidStudio)
+Profile information insertion/display (AndroidStudio)
