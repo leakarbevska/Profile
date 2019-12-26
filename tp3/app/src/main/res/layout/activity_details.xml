@@ -89,12 +89,12 @@
         android:id="@+id/check_android"
         android:layout_width="113dp"
         android:layout_height="33dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="@string/android"
         app:layout_constraintBottom_toBottomOf="@+id/check_php"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.011"
+        app:layout_constraintHorizontal_bias="0.30"
         app:layout_constraintStart_toEndOf="@+id/check_php"
         app:layout_constraintTop_toBottomOf="@+id/check_java" />
 

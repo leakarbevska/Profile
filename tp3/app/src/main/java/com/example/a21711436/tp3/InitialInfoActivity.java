@@ -1,6 +1,7 @@
 package com.example.a21711436.tp3;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +21,22 @@ public class InitialInfoActivity extends AppCompatActivity {
         text_pseudo = (TextView) findViewById(R.id.text_pseudo);
         text_email  = (TextView) findViewById(R.id.text_email);
         text_phone  = (TextView) findViewById(R.id.text_phone);
+        loadExistingProfileData();
+    }
 
+    public void loadExistingProfileData() {
+        Profile profile = Profile.loadFromDisk();
+        if(profile != null) {
+            startDisplayInfoActivity(profile);
+        }
+    }
+
+    private void startDisplayInfoActivity(Profile profile) {
+        Intent intent = new Intent(this, DisplayInfoActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra(Profile.KEY_PROFILE, (Parcelable) profile);
+        startActivity(intent);
+        finish();
     }
 
     /*----------------------------- BUTTON EVENT -----------------------------*/

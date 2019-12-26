@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".DisplayInfoActivity">
 
-    <EditText
+    <TextView
         android:id="@+id/text_summary"
         android:layout_width="270dp"
         android:layout_height="333dp"

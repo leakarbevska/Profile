@@ -1,6 +1,7 @@
 package com.example.a21711436.tp3;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +19,7 @@ public class DisplayInfoActivity extends AppCompatActivity {
 
         Intent intent = this.getIntent();
         Bundle bundle = intent.getExtras();
-        this.profile  = bundle.getParcelable("profile");
+        this.profile  = bundle.getParcelable(Profile.KEY_PROFILE);
 
         text_summary = (TextView) findViewById(R.id.text_summary);
         text_summary.setText("Pseudo: "+profile.getPseudo()
@@ -35,9 +36,7 @@ public class DisplayInfoActivity extends AppCompatActivity {
     /*--------------------------------- BUTTON EVENT ----------------------------------*/
     public void edit(View v){
         Intent intent = new Intent(this, DetailedInfoActivity.class);
-        intent.putExtra("profile", this.profile);
-        intent.putExtra("pseudo",this.profile.getPseudo());
-        intent.putExtra("age",this.profile.getAge());
+        intent.putExtra("profile", (Parcelable) this.profile);
         startActivity(intent);
     }
 

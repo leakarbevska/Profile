@@ -3,8 +3,10 @@ package com.example.a21711436.tp3;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Profile implements Parcelable {
+import java.io.Serializable;
 
+public class Profile implements Parcelable, Serializable {
+    public static final String KEY_PROFILE = "keyProfile";
     private String pseudo, email, phone, age, lastDiploma, moreInfo, programmingLanguages;
     private boolean receiveNewsletter;
     //private boolean htmlCss, android, php, java, javascript, python;
@@ -103,4 +105,16 @@ public class Profile implements Parcelable {
             return new Profile[size];
         }
     };
+
+    public void saveToDisk() {
+        StorageUtils.saveObjectToDisk(KEY_PROFILE, this);
+    }
+
+    public static Profile loadFromDisk() {
+        return (Profile) StorageUtils.loadFromDisk(KEY_PROFILE, Profile.class);
+    }
+
+    public static void removeFromDisk() {
+        StorageUtils.deleteObjectFromDisk(KEY_PROFILE);
+    }
 }
